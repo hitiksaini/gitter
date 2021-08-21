@@ -1,14 +1,41 @@
-# gitter
-gitter is a info-project to use git and GitHub. 
+So you’ve just decided to use GitHub for your upcoming projects but don’t know what tf is going on with all those commands.
+
+gitter is a info-project to use git and GitHub. These commands are good to get you started and even collaborate with your friends in projects.
 
 ## What is git and GitHub 
 * Git is a version control system that lets you manage and keep track of your source code history.
 * GitHub is a cloud-based hosting service owned by microsoft that lets you manage git repositories(contains all of your project's files and each file's revision history).
 
-## Why I should even use it
+## Why should you even use it
 GitHub is a website for developers and programmers to **collaboratively work on code.** The primary benefit of GitHub is its version control system, which allows for seamless collaboration without compromising the integrity of the original project.
 
-## Basic commands
+
+Let's start from the beginning, you can be in two different scenarios :
+
+### 1) Starting fresh with no code/file/project
+One thing you can do is clone someone else's code and make a local copy of it in your system for instance let's clone this repo: https://github.com/hitiksaini/gitter.git
+
+* `git clone https://github.com/hitiksaini/gitter.git`
+
+And you're done! Now you can make changes to this copy you've just cloned. Also, if these changes are impactful you can create a PR(Pull Request) where in I(owner) can review your changes and merge them into the remote repository and once I accept your PR you become contributor.
+
+Secondly, if you don't want to clone you can make a new one
+
+* `git init`
+* `git add .`
+* `git commit -m"first commit message"`
+* `git remote add origin <repo_link>`
+* `git push origin main`
+
+### 2) Had already done your project and now moving it to github
+
+In this case you can create a new repository on github website and then import your files directly with remote command 
+
+Set up git in your project directory as done before. Process in almost same for both these scenarios
+
+`git remote add origin <new_repo_link>`
+
+## Basic git commands
 
 ### `git config --global`
 Configure the author name and email address to be used with your commits. This is probably the first thing you will do while starting git:
