@@ -8,8 +8,31 @@ gitter is a info-project to use git and GitHub.
 ## Why I should even use it
 GitHub is a website for developers and programmers to **collaboratively work on code.** The primary benefit of GitHub is its version control system, which allows for seamless collaboration without compromising the integrity of the original project.
 
-## 
+## Basic commands
 
+### `git config --global`
+Configure the author name and email address to be used with your commits. This is probably the first thing you will do while starting git:
+
+`git config --global user.name "Hitik"`
+
+`git config --global user.email your@mail.com`
+
+### `git init`
+Create a new local repository
+
+### `git add`
+Add one or more files to staging (index)
+
+### `git commit`
+Commit changes to head (but not yet to the remote repository):
+
+### `git push`
+Send changes to the master branch of your remote repository:
+
+### `git pull`
+
+### `git clone`
+Create a working copy of a local repository:
  
  
 ## Auto merge conflict commit 
