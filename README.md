@@ -1,3 +1,7 @@
+### Suggestion 
+For better readability, use [webpage](https://hitiksaini.github.io/gitter/) version. Thanks!
+
+### Hey there!
 So you’ve just decided to use GitHub for your upcoming projects but don’t know what tf is going on with all those commands.
 
 gitter is a info-project to use git and GitHub. These commands are good to get you started and even collaborate with your friends in projects.
