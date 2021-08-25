@@ -86,10 +86,6 @@ When you add a commit to your local copy of a branch and then pulling upstream(r
 Now, when you push your changes up to remote repository, you end up with both a **merge from the remote integration branch into your local branch**, and a **merge from your local branch into the integration branch** 
 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-
+Incomplete at this stage :)
 
 
