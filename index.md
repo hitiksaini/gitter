@@ -64,7 +64,7 @@ It always a good idea to describe a good commit message so that others can know 
 Send changes to the master branch of your remote repository.
 
 ### `git pull`
-Pull changes from remote to local (see [auto merge conflict]() to pull the right way)
+Pull changes from remote to local (see [auto merge conflict](https://github.com/hitiksaini/gitter#auto-merge-conflict-commit) to pull the right way)
 
 ### `git clone`
 Create a working copy of repository.
