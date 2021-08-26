@@ -22,51 +22,55 @@ And you're done! Now you can make changes to this copy you've just cloned. Also,
 Secondly, if you don't want to clone you can make a new one
 
 * `git init`
+* `git remote add origin <repo_link>` (get the repo_link by [creating a new repository](https://docs.github.com/en/get-started/quickstart/create-a-repo))
 * `git add .`
 * `git commit -m"first commit message"`
-* `git remote add origin <repo_link>`
 * `git push origin main`
+
+Now you will see a dedicated webpage for your new project.
 
 ### 2) Had already done your project and now moving it to github
 
-In this case you can create a new repository on github website and then import your files directly with remote command 
+In this case you can create a new repository on github website as done in previous step and then export your files directly by configuring remote.
 
 Set up git in your project directory as done before. Process in almost same for both these scenarios
 
 `git remote add origin <new_repo_link>`
 
+Now just add your changes to staging area(`git add`) and later push it to working directory.
+
 ## Basic git commands
 
-```markdown
-
-**git config --global**
-Configure the author name and email address to be used with your commits. 
-
-This is probably the first thing you will do while starting git:
+### `git config --global`
+Configure the author name and email address to be used with your commits. This is probably the first thing you will do while starting git:
 
 `git config --global user.name "Hitik"`
 
 `git config --global user.email your@mail.com`
 
-**git init**
-Create a new local repository
+### `git init`
+Create a new local repository, basically adds git to your project directory.
 
-**git add**
-Add one or more files to staging (index)
+### `git add`
+Add one or more files to staging (index), you can specifically use `git add <filename>` or just do `git add .` this will add every **new or changed** file's.
 
-**git commit**
-Commit changes to head (but not yet to the remote repository):
+### `git commit`
+Commit changes to head (but not yet to the remote repository), this is like your signature and it means you are approving the changes done in your local version. 
 
-**git push**
-Send changes to the master branch of your remote repository:
+But wait, `git commit` doesn't work? Yes! because it requires an important argument i.e, a **commit message** this is why **-m flag** is used while using cmd
+It always a good idea to describe a good commit message so that others can know what you did.
 
-**git pull**
+### `git push`
+Send changes to the master branch of your remote repository.
 
-**git clone**
-Create a working copy of a local repository:
-```
+### `git pull`
+Pull changes from remote to local (see [auto merge conflict]() to pull the right way)
 
- 
+### `git clone`
+Create a working copy of repository.
+
+## Branching in GitHub
+---
  
 ## Auto merge conflict commit 
 When you do a `git pull` modifications from the remote branch are merged into your local branch and they might or might not have some conflicts with this local.
@@ -84,8 +88,3 @@ I suggest you to pull this way next time:
 When you add a commit to your local copy of a branch and then pulling upstream(remote) changes into this local branch, **since your local commits are not on the remote repository yet**, when `git pull` runs git merge origin/[branch] [branch], **it will automatically do a "recursive" merge and create a commit with the remote changes.** 
 
 Now, when you push your changes up to remote repository, you end up with both a **merge from the remote integration branch into your local branch**, and a **merge from your local branch into the integration branch** 
-
-
-Incomplete at this stage :)
-
-
