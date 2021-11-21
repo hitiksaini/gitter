@@ -70,7 +70,20 @@ Pull changes from remote to local (see [auto merge conflict](https://github.com/
 Create a working copy of repository.
 
 ## Branching in GitHub
----
+
+I'll be honest this feature of git is developer's best friend. After that you've done all that is said above I think you're ready to grasp this concept now. So, in simple words branching is nothing but **a copy of your production** which you can use for **fixing bugs, add or try new features** in your project application. When you create a branch of your project it literally copies each and every line from that point in repository and later you can mess around with the code without compromising production.
+
+It's not only for messing around though :) you can merge your changes with the original copy(main) if you don't break the code and it still works :p 
+
+Here's how you can check all present branches in a repository :
+
+### `git branch`
+
+It will show all available branches, you can shift to any of those(please be sure to ask your senior dev before cracking his code lol) use this cmd to switch
+
+### `git checkout _branch_name`
+
+Now everything you do any changes any commits will be on this branch of the project.
  
 ## Auto merge conflict commit 
 When you do a `git pull` modifications from the remote branch are merged into your local branch and they might or might not have some conflicts with this local.
