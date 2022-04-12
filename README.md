@@ -99,7 +99,7 @@ I suggest you to pull this way next time:
 ### Best way to avoid?
 * Always `git pull` before you even start working + commit on milestones.(I personally use the same)
 
-* If you are in a situation where someone else has already pushed some changes (commits) before you, use `git reset --hard origin/master` on your local copy. This should not a cause a conflict.
+* If you are in a situation where someone else has already pushed some changes (commits) before you, use `git reset --hard origin/master` on your local copy. This should not cause any conflict.
 
 ### Again, why does this happens at first place?
 When you add a commit to your local copy of a branch and then pulling upstream(remote) changes into this local branch, **since your local commits are not on the remote repository yet**, when `git pull` runs git merge origin/[branch] [branch], **it will automatically do a "recursive" merge and create a commit with the remote changes.** 
