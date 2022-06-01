@@ -101,3 +101,71 @@ I suggest you to pull this way next time:
 When you add a commit to your local copy of a branch and then pulling upstream(remote) changes into this local branch, **since your local commits are not on the remote repository yet**, when `git pull` runs git merge origin/[branch] [branch], **it will automatically do a "recursive" merge and create a commit with the remote changes.** 
 
 Now, when you push your changes up to remote repository, you end up with both a **merge from the remote integration branch into your local branch**, and a **merge from your local branch into the integration branch** 
+
+## Setting up git for work & personal account (multiple access from cmd)
+This will come handy when you want will have to manage your organisations repos with your work email gtihub account(yourname@company.com). It is possible to allow your cmd to act differently(use your work email instead of your personal github) whenever you are accessing a private repo of your company.
+
+Go to your home directory you'll find `.gitconfig` change its content as following:
+
+    [include]
+            path = ~/git-personal.conf
+    [includeIf "gitdir:~/Desktop/company_work/"]
+            path = ~/git-work.conf
+
+Note: "company_work" is a folder on your desktop(you can change path as per your needs) that will help git to separate your work from personal. This will keep all the work in one folder as well.
+
+Now we will create these two conf files that we have mentioned above
+
+`vim git-personal.conf` 
+A editor will open now paste the content and change the details
+
+    [user]
+            name = hitiksaini
+            email = hitik9045saini@gmail.com
+            
+`vim git-work.conf` 
+Same for git-work.conf
+
+    [user]
+            name = hitik_companyName
+            email = hitik.saini@company.in
+
+Great! Now we have successfully separated the work and personal directory. Let's setup the SSH(Using the SSH protocol, you can connect and authenticate to remote servers and services. With SSH keys, you can connect to GitHub without supplying your username and personal access token at each visit) 
+
+
+`cd ~./ssh`
+
+Generate SSH key for Personal account
+`ssh-keygen -t rsa -f "id_rsa_personal" -C "email_personal@gmail.com" -P "give_a_password"`
+
+Generate SSH key for Work account
+`ssh-keygen -t rsa -f "id_rsa_work" -C "email_work@company.com" -P "give_a_password"`
+
+This will create 4 files in /ssh public and private x 2
+
+Now run `cat id_rsa_personal.pub`
+it will print a string this is your personal public ssh key add this to your github account. Go to <b>Add SSH Key page</b> give title as you wish and paste this string.
+Repeat the same for your work email github account and paste contents of `id_rsa_work.pub`
+
+One last step is to configure these settings. 
+
+In the same directory(~/.ssh)
+
+`vim config` 
+And paste the settings as:
+
+    #personal
+    Host github.com
+     HostName github.com
+     User git
+     IdentityFile ~/.ssh/id_rsa_personal
+
+    #work
+    Host github-work
+     HostName github.com
+     User git
+     IdentityFile ~/.ssh/id_rsa_work
+
+And Done!!
+Next time if you want to clone a private repo from your companies github account do it as:
+### `git clone github-work:company/repo_name.git`
