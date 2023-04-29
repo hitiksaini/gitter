@@ -174,3 +174,22 @@ And Done!!
 Next time if you want to clone a private repo from your companies github account do it as:
 ### `git clone github-work:company/repo_name.git`
 
+
+## Change commit author  
+At times we mistakently commit from our parallel running git account so here's a way to reset the author :
+
+1. Configure your new username and email 
+
+`git config username.user <your_username>`
+
+`git config username.email <your_email>`
+
+2. Run
+
+`git commit --amend -C HEAD --reset-author`
+
+3. Finally, 
+
+`git push --force`
+
+This will change the author of the last commit. Conditionally, you should have access to force push to the remote repository.
